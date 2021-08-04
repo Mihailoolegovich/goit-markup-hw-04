@@ -7,6 +7,7 @@
   --primary-white-color: #ffffff;
   --secondary-background-color: #2f303a;
   --primary-button-color: #f5f4fa;
+  --border-color: #afb1b8;
   --shadow-cards-index: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   --shadow-cards-portfolio: 0px 3px 1px rgba(0, 0, 0, 0.1),
@@ -41,7 +42,12 @@ img {
   display: block;
 }
 
-/* Visually hidden */
+/* *,
+::before,
+::after {
+  outline: 1px solid green;
+} */
+/* +++++ Visually hidden +++++ */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -56,16 +62,16 @@ img {
   overflow: hidden;
 }
 
-/* Container */
+/* +++++ Container +++++ */
 .container {
   padding: 0 15px;
   margin: 0 auto;
   width: 1200px;
 }
 
-/*  */
+/* ==================== */
 /* Top line */
-/*  */
+/* ==================== */
 
 .header {
   border-bottom: 1px solid #ececec;
@@ -75,7 +81,7 @@ img {
   display: flex;
 }
 
-/* Logo*/
+/* ========== Logo ========== */
 
 .nav-site {
   display: flex;
@@ -94,11 +100,16 @@ img {
   color: var(--accent-coolor);
 }
 
-/* Nav-links */
+/* ========== Nav-links ========== */
 
 .nav-links {
   display: flex;
   margin-left: 93px;
+}
+
+.nav-links .item {
+  display: flex;
+  align-items: baseline;
 }
 
 .nav-links .item + .item {
@@ -124,7 +135,7 @@ img {
   color: var(--accent-coolor);
 }
 
-/* Contacts */
+/* ========== Contacts ========== */
 
 .contacts-header {
   display: flex;
@@ -135,8 +146,13 @@ img {
   margin-left: 50px;
 }
 
+.contacts-header .icon {
+  margin-right: 10px;
+  fill: var(--border-color);
+}
+
 .contacts-header .link {
-  display: block;
+  display: flex;
   padding: 32px 0;
 
   color: var(--primary-text-color);
@@ -146,13 +162,17 @@ img {
 }
 
 .contacts-header .link:hover,
-.contacts-header .link:focus {
+.contacts-header .link:focus,
+.contacts-header .link:hover .icon,
+.contacts-header .link:focus .icon {
   color: var(--accent-coolor);
+  fill: var(--accent-coolor);
+  /* fill: currentColor; */
 }
 
-/*  */
+/* ==================== */
 /* Footer */
-/*  */
+/* ==================== */
 
 .footer {
   background-color: var(--background-color);
@@ -161,6 +181,11 @@ img {
 
 .cursor * {
   cursor: default;
+}
+
+.footer .container {
+  display: flex;
+  align-items: baseline;
 }
 
 .footer .site-footer {
@@ -179,9 +204,9 @@ img {
   color: var(--accent-coolor);
 }
 
-/* Addresses */
+/* ========== Addresses ========== */
 
-.addresses {
+.footer .addresses {
   font-style: normal;
 }
 
@@ -207,21 +232,53 @@ img {
   margin-bottom: 9px;
 }
 
-/*  */
-/* Content with index */
-/*  */
+/* ==========  Invitation ==========  */
 
-/* Herov title */
+.invitation {
+  margin-left: 70px;
+  align-items: baseline;
+}
+
+.invitation .title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+}
+
+.invitation .social {
+  display: flex;
+}
+
+.invitation .link + .link {
+  margin-left: 10px;
+}
+/* ==================== */
+/* Content with index */
+/*  ====================  */
+
+/* ========== Herov title ========== */
 
 .herov {
-  background-color: var(--background-color);
+  max-width: 1600px;
+  height: 600px;
+  background-color: #c4c4c4;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/index_img/fon.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 200px 0;
+  margin: 0 auto;
 }
-/*
-.herov .container {
-   padding: 200px 0;
-} */
-
+/* linear-gradient(to right, rgba(196, 196, 196, 1), rgba(196, 196, 196, 1)); */
 .herov .title {
   text-align: center;
   margin: 0 auto 30px;
@@ -254,7 +311,7 @@ img {
   background-color: #188ce8;
 }
 
-/* Company credo */
+/* ========== Company credo ========== */
 
 .company-credo {
   padding: 94px 0;
@@ -276,6 +333,17 @@ img {
   margin-right: 30px;
 } */
 
+.credo .title-icon {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--primary-button-color);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
 .credo .title {
   height: 16px;
   margin-bottom: 10px;
@@ -295,7 +363,7 @@ img {
   letter-spacing: 0.03em;
 }
 
-/* Company direction */
+/* ==========Company direction========== */
 
 .company-direction {
   padding-bottom: 82px;
@@ -327,7 +395,7 @@ img {
   width: 370px;
 }
 
-/* Team */
+/* ========== Team ========== */
 
 .team {
   background-color: #f5f4fa;
@@ -385,13 +453,90 @@ img {
   color: var(--primary-text-color);
   font-size: 16px;
   line-height: 1.2;
+  margin-bottom: 16px;
 }
 
-/*  */
-/* Content with portfolio */
-/*  */
+.summary .network {
+  display: flex;
+  justify-content: center;
+  /*  */
+}
 
-/* Portfolio */
+.network .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(238, 238, 238, 0); /* Прозорість */
+  border-radius: 50%;
+  fill: var(--border-color);
+}
+
+.network .icon:hover,
+.network .icon:focus {
+  fill: var(--primary-white-color);
+  background-color: var(--accent-coolor);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.network .icon + .icon {
+  margin-left: 10px;
+}
+
+/* ==========Partners========== */
+
+.partners {
+  padding: 94px 0;
+}
+
+.partners .titel {
+  margin-bottom: 50px;
+  text-align: center;
+
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+.partners .links {
+  display: flex;
+  margin: 0 auto;
+}
+
+.partners .focus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.partners .focus {
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  fill: var(--border-color);
+}
+
+.partners .focus:hover,
+.partners .focus:focus {
+  border-color: var(--accent-coolor);
+  fill: var(--accent-coolor);
+}
+
+.partners .logotypes:not(:last-child) {
+  margin-right: 30px;
+}
+/* .partners .logotypes + .logotypes {
+  margin-left: 30px;
+} */
+
+/*  ====================  */
+/* Content with portfolio */
+/*  ====================  */
+
+/* ==========Portfolio========== */
 
 .portfolio {
   padding: 94px 0;
