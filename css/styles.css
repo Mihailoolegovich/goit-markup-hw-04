@@ -172,6 +172,7 @@ img {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.1;
+  align-items: center;
 }
 
 .contacts-header .link:hover,
@@ -289,7 +290,6 @@ img {
 
 .herov {
   max-width: 1600px;
-  height: 600px;
   background-color: #c4c4c4;
   background-image: linear-gradient(
       to right,
@@ -502,10 +502,9 @@ img {
 .network .icon:focus {
   fill: var(--primary-white-color);
   background-color: var(--accent-coolor);
-  border-radius: 50%;
 }
 
-.network .icon + .icon {
+.network li + li {
   margin-left: 10px;
 }
 
@@ -606,8 +605,12 @@ img {
   margin-bottom: 30px;
 }
 
-.portfolio .post:hover,
-.portfolio .post:focus {
+.publication .link-button {
+  display: block;
+}
+
+.publication .link-button:hover,
+.publication .link-button:focus {
   box-shadow: var(--shadow-cards-portfolio);
 }
 
